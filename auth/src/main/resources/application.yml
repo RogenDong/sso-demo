@@ -1,0 +1,62 @@
+# 服务监听的端口
+server:
+   port: 8080
+
+spring:
+   application:
+      name: sso-demo
+   # 数据库配置
+   datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/sso_demo
+      username: root
+      password: root
+      # jpa 配置
+      jpa:
+         hibernate:
+            # 不执行 ddl 生成
+            ddl-auto: none
+            # 指定 数据库表名 和 实体类名 的映射逻辑
+         #        naming:
+         #          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+         # jpa 执行时是否输出执行的 sql
+         show-sql: true
+         # 数据库软件
+         database: mysql
+         # mvc 模式下 session 中使用懒加载时需要开启；否则关闭
+         open-in-view: false
+      # 配置 json 工具
+      jackson:
+         # 默认时间格式化
+         date-format: yyyy-MM-dd HH:mm:sss
+         # 序列化
+         serialization:
+            # 格式化输出
+            indent_output: false
+            # 无法转换时是否抛出异常（主要处理懒加载的元素）
+            fail_on_empty_beans: false
+         # 反序列化
+         deserialization:
+            # 当 json 中含有不存在的属性是否抛出异常
+            fail_on_unknown_properties: false
+         parser:
+            # 允许出现转义字符
+            allow_unquoted_control_chars: true
+            # 允许出现单引号
+            allow_single_quotes: true
+   security:
+      sign-in-api: /sign/in
+      sign-up-api: /sign/up
+      logout-api: /logout
+      ignore:
+         - /ignore
+      must:
+         - /must
+
+jwt:
+   issuer: ssjwt
+   prefix: ssjwt-
+   # 3天
+   expiration: 259200000
+   secret: !!str 334568540
+   header-key: Authorization
