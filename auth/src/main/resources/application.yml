@@ -1,48 +1,48 @@
-# ·şÎñ¼àÌıµÄ¶Ë¿Ú
+# æœåŠ¡ç›‘å¬çš„ç«¯å£
 server:
    port: 8080
 
 spring:
    application:
       name: sso-demo
-   # Êı¾İ¿âÅäÖÃ
+   # æ•°æ®åº“é…ç½®
    datasource:
       driver-class-name: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://localhost:3306/sso_demo
       username: root
       password: root
-      # jpa ÅäÖÃ
+      # jpa é…ç½®
       jpa:
          hibernate:
-            # ²»Ö´ĞĞ ddl Éú³É
+            # ä¸æ‰§è¡Œ ddl ç”Ÿæˆ
             ddl-auto: none
-            # Ö¸¶¨ Êı¾İ¿â±íÃû ºÍ ÊµÌåÀàÃû µÄÓ³ÉäÂß¼­
+            # æŒ‡å®š æ•°æ®åº“è¡¨å å’Œ å®ä½“ç±»å çš„æ˜ å°„é€»è¾‘
          #        naming:
          #          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-         # jpa Ö´ĞĞÊ±ÊÇ·ñÊä³öÖ´ĞĞµÄ sql
+         # jpa æ‰§è¡Œæ—¶æ˜¯å¦è¾“å‡ºæ‰§è¡Œçš„ sql
          show-sql: true
-         # Êı¾İ¿âÈí¼ş
+         # æ•°æ®åº“è½¯ä»¶
          database: mysql
-         # mvc Ä£Ê½ÏÂ session ÖĞÊ¹ÓÃÀÁ¼ÓÔØÊ±ĞèÒª¿ªÆô£»·ñÔò¹Ø±Õ
+         # mvc æ¨¡å¼ä¸‹ session ä¸­ä½¿ç”¨æ‡’åŠ è½½æ—¶éœ€è¦å¼€å¯ï¼›å¦åˆ™å…³é—­
          open-in-view: false
-      # ÅäÖÃ json ¹¤¾ß
+      # é…ç½® json å·¥å…·
       jackson:
-         # Ä¬ÈÏÊ±¼ä¸ñÊ½»¯
+         # é»˜è®¤æ—¶é—´æ ¼å¼åŒ–
          date-format: yyyy-MM-dd HH:mm:sss
-         # ĞòÁĞ»¯
+         # åºåˆ—åŒ–
          serialization:
-            # ¸ñÊ½»¯Êä³ö
+            # æ ¼å¼åŒ–è¾“å‡º
             indent_output: false
-            # ÎŞ·¨×ª»»Ê±ÊÇ·ñÅ×³öÒì³££¨Ö÷Òª´¦ÀíÀÁ¼ÓÔØµÄÔªËØ£©
+            # æ— æ³•è½¬æ¢æ—¶æ˜¯å¦æŠ›å‡ºå¼‚å¸¸ï¼ˆä¸»è¦å¤„ç†æ‡’åŠ è½½çš„å…ƒç´ ï¼‰
             fail_on_empty_beans: false
-         # ·´ĞòÁĞ»¯
+         # ååºåˆ—åŒ–
          deserialization:
-            # µ± json ÖĞº¬ÓĞ²»´æÔÚµÄÊôĞÔÊÇ·ñÅ×³öÒì³£
+            # å½“ json ä¸­å«æœ‰ä¸å­˜åœ¨çš„å±æ€§æ˜¯å¦æŠ›å‡ºå¼‚å¸¸
             fail_on_unknown_properties: false
          parser:
-            # ÔÊĞí³öÏÖ×ªÒå×Ö·û
+            # å…è®¸å‡ºç°è½¬ä¹‰å­—ç¬¦
             allow_unquoted_control_chars: true
-            # ÔÊĞí³öÏÖµ¥ÒıºÅ
+            # å…è®¸å‡ºç°å•å¼•å·
             allow_single_quotes: true
    security:
       sign-in-api: /sign/in
@@ -56,7 +56,7 @@ spring:
 jwt:
    issuer: ssjwt
    prefix: ssjwt-
-   # 3Ìì
+   # 3å¤©
    expiration: 259200000
    secret: !!str 334568540
    header-key: Authorization
